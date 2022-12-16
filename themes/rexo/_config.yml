@@ -1,0 +1,65 @@
+author: 凡生
+description: 记录一些技术成长中的点点滴滴
+keywords: 前端 WebGL ThreeJS JavaScript
+language: zh-CN
+
+theme_name: Rexo
+theme_url: https://github.com/bluemix/hexo-theme-rexo
+
+menu:
+#  🏠: /
+  🏷: /tags/
+  📗: /archives/
+  📟: /projects/
+  📙: /cv/
+# 🏞: /photography/
+  👨🏻‍💻: /about/
+
+# highlight
+highlight:
+  tomorrow
+
+# Comment
+comment:
+    disqus: bluemixme
+
+
+google_analytics: 
+
+about: 
+  avatar: https://avatars.githubusercontent.com/u/80456522?s=400&u=edead5329c143c144d6cea603268adc82bffc86f&v=4
+  description: 拉答滴答滴
+  long_description:
+social:
+  github: https://github.com/d1zzzzy
+  github_username: d1zzzy
+  # stackoverflow: https://stackoverflow.com/users/1150190/abdulmomen-عبدالمؤمن
+  # twitter: https://twitter.com/bluemix2
+  # facebook: https://fb.com/bluemix
+  # linkedin: https://www.linkedin.com/in/bluemix2
+  # instagram: https://instagram.com/bluemix
+
+# Customize
+customize:
+    sidebar: right # sidebar position, options: left, right or leave it empty
+
+miscellaneous:
+    links:
+      - link:
+        - Archive
+        - /archives/
+        - 📗
+      # - link: 
+      #   - Quotes | حكم
+      #   - /quotes/
+      #   - 📝
+      # - link: 
+      #   - Songs & Music | موسيقى و أغاني
+      #   - /music
+      #   - 🎵
+      - link: 
+        - Inspired by
+        - /inspired
+        - 💖
+
+

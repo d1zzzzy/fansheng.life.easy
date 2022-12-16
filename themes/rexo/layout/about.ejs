@@ -1,0 +1,84 @@
+<div id="about-banner"></div>
+<div class="author">
+  <div class="head">
+    <img src="<%- theme.about.avatar %>" />
+  </div>
+  <h3><%- config.author %></h3>
+
+
+  <center>
+    <table >
+      <tr>
+        <td align="right">哒哒哒</td>
+        <td align="left">啦啦啦啦啦</td>
+      </tr>
+      <tr>
+        <td align="right">wakawaka</td>
+        <td align="left">eeeeeeeeeeeeee</td>
+      </tr>
+      <tr>
+        <td align="right">show me your fear</td>
+        <td align="left">we have no fear!</td>
+      </tr>
+      <tr>
+        <td align="right">favoriate</td>
+        <td align="left">Read</td>
+      </tr>
+      <tr>
+        <td colspan="2" align="center"><%- theme.about.description %></td>
+      </tr>
+    </table>
+  </center>
+
+
+  <section class="share-icons">
+
+    <% if (theme.social.github) { %>
+      <a class="icon-github" href="<%- theme.social.github %>">
+        Github
+      </a>
+    <% } %>
+    <% if (theme.social.stackoverflow) { %>
+      <a class="icon-stackoverflow" href="<%- theme.social.stackoverflow %>" >
+        Stackoverflow
+      </a>
+    <% } %>
+    <% if (theme.social.twitter) { %>
+      <a class="icon-twitter" href="<%- theme.social.twitter %>">
+        Twitter
+      </a>
+    <% } %>
+    <% if (theme.social.facebook) { %>
+      <a class="icon-facebook" href="<%- theme.social.facebook %>">
+        Facebook
+      </a>
+    <% } %>
+     <% if (theme.social.instagram) { %>
+      <a class="icon-instagram" href="<%- theme.social.instagram %>" target="_blank">
+        Instagram
+      </a>
+    <% } %> 
+     <% if (theme.social.linkedin) { %>
+      <a class="icon-linkedin" href="<%- theme.social.linkedin %>" target="_blank">
+        LinkedIn
+      </a>
+    <% } %> 
+  </section>
+</div>
+
+<script>
+  (function () {
+    var url = '<%= config.url %>/<%= page.path %>';
+    $('#about-banner').geopattern(url)
+
+    $('.header').removeClass('fixed-header')
+    var windowH = $(window).height();
+    var author = $('.author')
+    var bodyH = author.offset().top + author[0].offsetHeight + 71;
+    if (bodyH < windowH) {
+      author.css({
+        'margin-bottom': windowH - bodyH
+      })
+    }
+  })();
+</script>
