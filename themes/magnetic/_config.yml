@@ -13,7 +13,7 @@ default_cover_index: "http://placehold.it/450x450"
 default_cover_detail: "http://placehold.it/1300x500"
 
 # Favicon
-favicon: /img/favicon.png
+favicon: https://d1zzzzy.github.io/fansheng.life.easy/img/favicon.png
 
 # Comments. Choose one by filling up the information
 comments:
