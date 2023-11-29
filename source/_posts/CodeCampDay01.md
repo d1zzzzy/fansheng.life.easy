@@ -6,7 +6,7 @@ tags:
   - Array
 categories:
   - [Tech, Algorithm]
-cover_index: https://d1zzzzy.github.io/fansheng.life.easy/img/algo/binary-sort.png
+thumbnail: /fansheng.life.easy/images/code-camp-day01.png
 ---
 
 # 代码随想录算法训练营第一天
@@ -25,7 +25,7 @@ cover_index: https://d1zzzzy.github.io/fansheng.life.easy/img/algo/binary-sort.p
 + 数组是有限的
 
 
-查找某个 target 可以当成求出 y = target 在 x ∈ [0, n) 区间内与函数的交点。
+查找某个 `target` 可以当成求出 `y = target` 在 `x ∈ [0, n)` 区间内与函数的交点。
 
 > ### 数学联想
 > 由于数组下标是递增的，数组本身也是递增的，所以可以把下标当成 x 轴
