@@ -145,10 +145,10 @@ footer:
   # copyright: '&copy; 2019 • <a href="">John Doe</a>'
 
   # Set to false to hide Hexo link.
-  # powered: false
+  powered: false
 
   # Set to false to hide theme link.
-  # theme: false
+  theme: false
 
   # Custom text.
   # custom: Hosted by <a target="_blank" rel="external nofollow"
