@@ -4,9 +4,9 @@
 
 # Site
 title: 是凡生啊
-subtitle: FanSheng's Tech Blog 
+subtitle: FanSheng's Tech Blog
 description: 记录一些技术成长中的点点滴滴
-keywords: 前端 WebGL ThreeJS JavaScript
+keywords: 前端 WebGL ThreeJS JavaScript TypeScript
 author: 凡生
 language: zh-CN
 timezone: ''
@@ -99,7 +99,7 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: rexo
+theme: magnetic
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
