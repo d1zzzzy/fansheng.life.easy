@@ -3,7 +3,7 @@ name: Pages
 on:
   push:
     branches:
-      - gh-pages # default branch
+      - main # default branch
 
 jobs:
   build:
@@ -32,7 +32,7 @@ jobs:
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v2
         with:
-          path: ./public
+          path: .
   deploy:
     needs: build
     permissions:
