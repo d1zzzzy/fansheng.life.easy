@@ -111,8 +111,8 @@ profile:
 menu:
   首页: /
   关于: /about
-  #Links: /links
   搜索: /search
+  #Links: /links
   #Github: https://github.com/d1zzzzy
 
 # Social media URL
