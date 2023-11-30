@@ -1,6 +1,7 @@
 ---
 title: 代码随想录算法训练营第一天| 704. 二分查找、27. 移除元素
 date: 2023-11-29 15:37:41
+comments: true
 tags: 
   - Algorithm
   - Array

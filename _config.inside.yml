@@ -147,3 +147,19 @@ search:
       title: _snippetResult.title.value
       # title 对应具体某一条的内容字段
       content: _snippetResult.content.value
+
+comments: true
+
+plugins:
+  - //unpkg.com/valine/dist/Valine.min.js
+  - position: comments
+    template: |
+      <div id="vcomment"></div>
+      <script>
+        new Valine({
+          el: '#vcomment',
+          appId: 'S5u48yL1AIT8PtF7n0hGIhb9-gzGzoHsz',
+          appKey: 't52Ai5xcqqmT4DycALeMplLm',
+          path: location.pathname
+        })
+      </script>
