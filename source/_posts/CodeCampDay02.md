@@ -1,5 +1,5 @@
 ---
-title: CodeCampDay02
+title: 代码随想录算法训练营第二天
 date: 2023-11-30 18:05:41
 tags:
   - Algorithm
@@ -136,6 +136,12 @@ function minSubArrayLen(target: number, nums: number[]): number {
   return result;
 ```
 
+### 复杂度分析
+
++ 时间复杂度：O(n)
++ 空间复杂度：O(n)
++ n 为数组的长度
+
 ## 螺旋矩阵II
 
 > 题目描述：
@@ -151,7 +157,104 @@ function minSubArrayLen(target: number, nums: number[]): number {
 
 ### 思路
 
-[拆分后的螺旋矩阵](/fansheng.life.easy/images/spiral-matrix.png)
+[拆分后的三阶螺旋矩阵](/fansheng.life.easy/images/spiral-matrix.png)
 
-拆分矩阵，每次拆分出一个环，按上、下、左、右的顺序进行拆分。
+[拆分后的四阶螺旋矩阵](/fansheng.life.easy/images/spiral-matrix-4l.png)
 
+拆分矩阵，每次拆分出一个环，按上、下、左、右的顺序进行拆分。因此，我们需要对于我们设置的拆分规则设定循环边界。
+
+这里也可以用数学归纳法进行归纳：
+
+1. n 阶矩阵被拆成 Math.floor(n / 2) 个环
+2. 每个环分为四个部分，上、下、左、右
+   1. 上环，行不变，列递增，列的范围为 [start, n - loop]
+   2. 右环，列不变，行递增，行的范围为 [start, n - loop]
+   3. 下环，行不变，列递减，列的范围为 [n - loop, loop]
+   4. 左环，列不变，行递减，行的范围为 [n - loop, loop]
+3. 在`loop++ < Math.floor(n / 2)`的循环，反复执行步骤 2
+4. 处理奇数情况: 当 n 为奇数时，最后一个元素需要单独处理
+
+### 代码实现
+
+```typescript
+function generateMatrix(n) {
+  // 高速出口
+  if (n === 0) return [];
+
+  if (n === 1) return [[1]];
+
+  let i = 0; // 行
+  let j = 0; // 列
+
+  let loop = 0; // 当前循环的环数
+  let current = 1; // 当前应该填充的值
+  let start = 0; // 当前环的起始值
+  const result = []; // 最后的结果
+
+  // 初始化二维数组
+  for (let k = 0; k < n; k++) {
+    result[k] = [];
+  }
+
+  // 根据三阶、四阶拆分的规律：
+  // 三阶循环 1 次，剩最后一个元素，可以直接赋值
+  // 四阶循环 2 次
+  // 可以得出循环的次数为 n / 2,向下取整
+  // 奇数次的话，最后一个元素需要单独处理
+  while (loop++ < Math.floor(n / 2)) {
+    // 处理上边, 循环列
+    // 例如：第一圈, start = 0
+    // 此循环填充的是第一行的列数 n - loop 内 [start = 0,1,2..., n - loop]
+    for (j = start; j < n - loop; j++) {
+      result[start][j] = current++;
+    }
+
+    // 处理右边, 循环行
+    // 例如：第一圈, start = 0
+    // 此循环填充的是第一列的行数为 n - loop 内 [start = 0,1,2..., n - loop]
+    for (i = start; i < n - loop; i++) {
+      result[i][j] = current++;
+    }
+
+    // 处理下边, 循环列
+    // 此时 j 的初始值为 n - loop
+    for (; j >= loop; j--) {
+      result[i][j] = current++;
+    }
+    
+    // 处理左边, 循环行
+    // 此时 i 的初始值为 n - loop
+    for (; i >= loop; i--) {
+      result[i][j] = current++;
+    }
+
+    start++;
+  }
+
+  // 奇数情况，处理最后一个元素
+  if (n % 2 === 1) {
+    result[start][start] = current;
+  }
+
+  return result;
+}
+```
+
+### 复杂度分析
+
++ 时间复杂度：O(n^2)
++ 空间复杂度：O(n^2)
++ n 为矩阵的阶数
+
+## 数组知识点总结
+
+1. 注意边界范围，防止越界
+2. 双指针法
+   1. 快慢指针/滑动窗口
+      1. 快指针先走，慢指针后走，这样存在一个区间，可以通过判断来实现区间内连续元素符合某个条件
+      2. 处理数组连续元素的问题
+   2. 左右指针
+3. 循环条件
+   1. 循环次数
+   2. 循环边界
+   3. 循环终止条件
