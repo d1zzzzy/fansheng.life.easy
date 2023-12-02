@@ -60,6 +60,249 @@ function removeElements(head, val) {
 
 ### 707.设计链表  
 
+> 题目描述：
+> 
+> 你可以选择使用单链表或者双链表，设计并实现自己的链表。
+>
+> 单链表中的节点应该具备两个属性：val 和 next 。val 是当前节点的值，next 是指向下一个节点的指针/引用。
+>
+> 如果是双向链表，则还需要属性 prev 以指示链表中的上一个节点。假设链表中的所有节点下标从 0 开始。
+> 
+> 实现 MyLinkedList 类：
+>
+> MyLinkedList() 初始化 MyLinkedList 对象。
+> int get(int index) 获取链表中下标为 index 的节点的值。如果下标无效，则返回 -1 。
+> void addAtHead(int val) 将一个值为 val 的节点插入到链表中第一个元素之前。在插入完成后，新节点会成为链表的第一个节点。
+> void addAtTail(int val) 将一个值为 val 的节点追加到链表中作为链表的最后一个元素。
+> void addAtIndex(int index, int val) 将一个值为 val 的节点插入到链表中下标为 index 的节点之前。如果 index 等于链表的长度，那么该节点会被追加到链表的末尾。如果 index 比长度更大，该节点将 不会插入 到链表中。
+> void deleteAtIndex(int index) 如果下标有效，则删除链表中下标为 index 的节点。
+
+#### 已知
+
+1. 可以使用单链表或者双链表：使用两种不同的链表后续对链表的操作也不一样
+2. 链表的结构
+
+题目目的是去熟悉链表的基础操作。
+
+#### 代码实现
+
+##### 单链表
+
+```typescript
+	class Node {
+		value: number;
+		next: Node | null = null;
+
+		constructor(value: number) {
+			this.value = value;
+		}
+	}
+    
+	class MyLinkedList {
+		head: Node | null = null;
+		length: number = 0;
+
+		constructor() {}
+
+		get(index: number): number {
+			if (index < 0 || index >= this.length) return -1;
+
+			let pointer = this.head;
+			for (let i = 0; i < index; i++) {
+				pointer = pointer.next;
+			}
+
+			return pointer.value;
+		}
+        
+		// 在头部添加等于把整个链表接在一个新节点后面
+		addAtHead(val: number): void {
+			const node = new Node(val);
+			node.next = this.head;
+			this.head = node;
+			this.length++;
+		}
+        
+		// 主要在于判断链表有无元素
+		addAtTail(val: number): void {
+			const node = new Node(val);
+			if (!this.head) {
+				this.head = node;
+			} else {
+				let pointer = this.head;
+				while (pointer.next) {
+					pointer = pointer.next;
+				}
+				pointer.next = node;
+			}
+			this.length++;
+		}
+
+		// index 有几种情况
+		//  1. index 超出链表的长度（异常情况）
+		//  2. index <= 0，即在头部添加
+		//  3. index 为链表的长度，即在尾部添加
+		//  4. index 为中间位置，即在中间添加
+		addAtIndex(index: number, val: number): void {
+			if (index > this.length) return;
+			if (index <= 0) {
+				this.addAtHead(val);
+				return;
+			}
+			if (index === this.length) {
+				this.addAtTail(val);
+				return;
+			}
+
+			const node = new Node(val);
+			let pointer = this.head;
+			for (let i = 0; i < index - 1; i++) {
+				pointer = pointer.next;
+			}
+			node.next = pointer.next;
+			pointer.next = node;
+			this.length++;
+		}
+			
+		// index 有几种情况，但是和添加不一样
+		//  1. index < 0 || >= length 不做任何处理
+		//  2. index === 0，即删除头部
+		//  3. index 为中间位置，即删除中间位置
+		deleteAtIndex(index: number): void {
+			if (index < 0 || index >= this.length) return;
+
+			if (index === 0) {
+				this.head = this.head.next;
+				this.length--;
+				return;
+			}
+
+			let pointer = this.head;
+			for (let i = 0; i < index - 1; i++) {
+				pointer = pointer.next;
+			}
+			pointer.next = pointer.next.next;
+			this.length--;
+		}
+	}
+```
+
+##### 双链表
+
+双链表和单链表的区别就是需要考虑两个指针的指向问题，需要思路更清晰一些。
+
+```typescript
+	class Node {
+		value: number;
+		prev: Node | null = null;
+		next: Node | null = null;
+
+		constructor(value: number) {
+			this.value = value;
+		}
+	}
+
+	class MyLinkedList {
+		head: Node | null = null;
+		tail: Node | null = null;
+		length: number = 0;
+
+		constructor() {}
+
+		get(index: number): number {
+			if (index < 0 || index >= this.length) return -1;
+
+			let pointer = this.head;
+			for (let i = 0; i < index; i++) {
+				pointer = pointer.next;
+			}
+
+			return pointer.value;
+		}
+
+		addAtHead(val: number): void {
+			const node = new Node(val);
+			if (!this.head) {
+				this.head = node;
+				this.tail = node;
+			} else {
+				node.next = this.head;
+				this.head.prev = node;
+				this.head = node;
+			}
+			this.length++;
+		}
+
+		addAtTail(val: number): void {
+			const node = new Node(val);
+			if (!this.head) {
+				this.head = node;
+				this.tail = node;
+			} else {
+				node.prev = this.tail;
+				this.tail.next = node;
+				this.tail = node;
+			}
+			this.length++;
+		}
+
+		addAtIndex(index: number, val: number): void {
+			if (index > this.length) return;
+			if (index <= 0) {
+				this.addAtHead(val);
+				return;
+			}
+			if (index === this.length) {
+				this.addAtTail(val);
+				return;
+			}
+
+			const node = new Node(val);
+			let pointer = this.head;
+			for (let i = 0; i < index - 1; i++) {
+				pointer = pointer.next;
+			}
+			node.prev = pointer;
+			node.next = pointer.next;
+			pointer.next.prev = node;
+			pointer.next = node;
+			this.length++;
+		}
+
+		deleteAtIndex(index: number): void {
+			if (index < 0 || index >= this.length) return;
+
+			if (index === 0) {
+				this.head = this.head.next;
+                
+				if (this.head) {
+					this.head.prev = null;
+				} else {
+					this.tail = null;
+				}
+
+				this.length--;
+				return;
+			}
+
+			if (index === this.length - 1) {
+				this.tail = this.tail.prev;
+				this.tail.next = null;
+				this.length--;
+				return;
+			}
+
+			let pointer = this.head;
+			for (let i = 0; i < index - 1; i++) {
+				pointer = pointer.next;
+			}
+			pointer.next = pointer.next.next;
+			pointer.next.prev = pointer;
+			this.length--;
+		}
+	}
+```
+
 ### 206.反转链表 
 
 > 题目描述：
