@@ -6,6 +6,7 @@ tags:
   - LinkedList
 categories:
   - [Tech, Algorithm]
+thumbnail: /fansheng.life.easy/images/code-camp-day04.png
 ---
 
 # 代码随想录算法训练营第四天
