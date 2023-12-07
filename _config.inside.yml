@@ -81,6 +81,7 @@ menu:
   主页: /
   关于: /about
   搜索: /search
+  webgpu: /webgpu
   Github: https://github.com/d1zzzzy
 
 footer:
@@ -106,57 +107,57 @@ search:
   # 以上两个入口必须至少设置一个，否则视为无效配置
 
   # 本地搜索，即生成本地 json 文件
-#  adapter:
-#    # json 数据的范围，数组
-#    range:
-#      - post
-#      - page
-#
-#    # json 数据的条目限制
-#    # 假如 `limit:1000`，同时有 800 篇 post，800 篇 page，则最终生成的数据包含：
-#    # 800 篇 post，200 篇 page
-#    # 缺省值 `10000`
-#    limit: 10000
-#
-#    # 搜索结果分页大小，缺省值 `10`
-#    per_page: 5
-
   adapter:
+    # json 数据的范围，数组
+    range:
+      - post
+      - page
+
+    # json 数据的条目限制
+    # 假如 `limit:1000`，同时有 800 篇 post，800 篇 page，则最终生成的数据包含：
+    # 800 篇 post，200 篇 page
+    # 缺省值 `10000`
+    limit: 10000
+
     # 搜索结果分页大小，缺省值 `10`
     per_page: 5
-    # 显示 LOGO 图片，可选
-    logo: //cdn.worldvectorlogo.com/logos/algolia.svg
-    # 此配置项为构造完整的请求对象
-    request:
-      # 接口 URL
-      url: https://NJ06RCKMFT-dsn.algolia.net/1/indexes/FanS/query
 
-      # GET 或 POST，不区分大小写，缺省值 `GET`
-      method: post
-
-      # 请求参数，格式视 Content-Type 而定，支持的字符串插值有：
-      # 搜索的字符串 `:query`
-      # 分页大小 `:per_page`
-      # 当前页 `:current`
-      body: '{"query":":query","hitsPerPage":":per_page","page":":current"}'
-
-      # 请求头
-      headers:
-        X-Algolia-API-Key: d9ef02a303d76596d20a1173161d642a
-        X-Algolia-Application-Id: NJ06RCKMFT
-        Content-Type: application/json; charset=UTF-8
-
-    # 则设置
-    keys:
-      data: hits
-      current: page
-      total: nbPage
-      hits: nbHits
-      time: processingTimeMS
-      # title 对应具体某一条的标题字段
-      title: _snippetResult.title.value
-      # title 对应具体某一条的内容字段
-      content: _snippetResult.content.value
+#  adapter:
+#    # 搜索结果分页大小，缺省值 `10`
+#    per_page: 5
+#    # 显示 LOGO 图片，可选
+#    logo: //cdn.worldvectorlogo.com/logos/algolia.svg
+#    # 此配置项为构造完整的请求对象
+#    request:
+#      # 接口 URL
+#      url: https://NJ06RCKMFT-dsn.algolia.net/1/indexes/FanS/query
+#
+#      # GET 或 POST，不区分大小写，缺省值 `GET`
+#      method: post
+#
+#      # 请求参数，格式视 Content-Type 而定，支持的字符串插值有：
+#      # 搜索的字符串 `:query`
+#      # 分页大小 `:per_page`
+#      # 当前页 `:current`
+#      body: '{"query":":query","hitsPerPage":":per_page","page":":current"}'
+#
+#      # 请求头
+#      headers:
+#        X-Algolia-API-Key: d9ef02a303d76596d20a1173161d642a
+#        X-Algolia-Application-Id: NJ06RCKMFT
+#        Content-Type: application/json; charset=UTF-8
+#
+#    # 则设置
+#    keys:
+#      data: hits
+#      current: page
+#      total: nbPage
+#      hits: nbHits
+#      time: processingTimeMS
+#      # title 对应具体某一条的标题字段
+#      title: _snippetResult.title.value
+#      # title 对应具体某一条的内容字段
+#      content: _snippetResult.content.value
 
 comments: true
 
