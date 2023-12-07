@@ -6,6 +6,7 @@ tags:
   - String
 categories:
   - [Tech, Algorithm]
+thumbnail: /fansheng.life.easy/images/default_cover_01.webp
 ---
 
 # 代码随想录算法训练营第七天
@@ -102,15 +103,15 @@ function reverse(arr: string[], left: number, right: number): void {
 
 ```typescript
 function reverseStr(s: string, k: number) {
-    let result = '';
+  let result = '';
 
-    for (let start = 0; start < s.length; start += 2 * k) {
-        let end = Math.min(start + k, s.length);
-        let sub = s.substring(start, end);
-        result += sub.split('').reverse().join('') + s.substring(end, start + 2 * k);
-    }
+  for (let start = 0; start < s.length; start += 2 * k) {
+    let end = Math.min(start + k, s.length);
+    let sub = s.substring(start, end);
+    result += sub.split('').reverse().join('') + s.substring(end, start + 2 * k);
+  }
 
-    return result;
+  return result;
 }
 ```
 

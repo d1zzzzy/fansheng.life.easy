@@ -6,6 +6,7 @@ tags:
   - HashMap
 categories:
   - [Tech, Algorithm]
+thumbnail: /fansheng.life.easy/images/default_cover_00.png
 ---
 
 # 代码随想录算法训练营第六天
