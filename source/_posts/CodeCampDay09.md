@@ -7,7 +7,7 @@ tags:
   - Queue
 categories:
   - [Tech, Algorithm]
-thumbnail: /fansheng.life.easy/images/default_cover_01.webp
+thumbnail: /fansheng.life.easy/images/default_cover_04.jpg
 ---
 
 # 代码随想录算法训练营第九天

@@ -6,7 +6,7 @@ tags:
   - String
 categories:
   - [Tech, Algorithm]
-thumbnail: /fansheng.life.easy/images/default_cover_01.webp
+thumbnail: /fansheng.life.easy/images/default_cover_01.jpg
 ---
 
 # 代码随想录算法训练营第七天
