@@ -5,6 +5,7 @@ tags:
   - Typescript
 categories:
   - [Tech, Typescript]
+thumbnail: /fansheng.life.easy/images/default_cover_03.png
 ---
 
 # Typescript 中的类型
