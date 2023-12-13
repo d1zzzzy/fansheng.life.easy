@@ -82,7 +82,6 @@ menu:
   关于: /about
   搜索: /search
   webgpu: /webgpu
-  Github: https://github.com/d1zzzzy
 
 footer:
   # 默认显示 @2019 • author，设置为 false 可隐藏。
@@ -96,6 +95,10 @@ footer:
 
   # 于最后一行添加自定义内容
 #  custom: Hosted by <a target="_blank" href="">Github Pages</a>
+
+sns:
+  github: https://github.com/d1zzzzy
+  email: d1zzzy.fe@gmail.com
 
 search:
   # 在页面右下角的 FAB 按钮里显示快捷搜索入口
