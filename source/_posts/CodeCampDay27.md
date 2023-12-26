@@ -1,5 +1,5 @@
 ---
-title: CodeCampDay27
+title: 代码随想录算法训练营第二十七天| 复原 IP 地址、子集、子集II
 date: 2023-12-26 17:09:20
 tags:
   - Algorithm
@@ -9,7 +9,7 @@ categories:
 thumbnail: /fansheng.life.easy/images/default_cover_05.png
 ---
 
-# 代码随想录算法训练营第二十七天| 复原 IP 地址、子集、子集II
+# 代码随想录算法训练营第二十七天
 
 ## 复原 IP 地址
 

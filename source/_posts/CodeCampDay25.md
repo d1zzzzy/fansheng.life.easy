@@ -1,5 +1,5 @@
 ---
-title: CodeCampDay25
+title: 代码随想录算法训练营第二十五天| 组合总和 III、电话号码的字母组合
 date: 2023-12-24 06:46:00
 tags:
   - Algorithm
@@ -9,7 +9,7 @@ categories:
 thumbnail: /fansheng.life.easy/images/default_cover_04.jpg
 ---
 
-# 代码随想录算法训练营第二十五天| 组合总和 III、电话号码的字母组合
+# 代码随想录算法训练营第二十五天
 
 ## 组合总和 III
 
