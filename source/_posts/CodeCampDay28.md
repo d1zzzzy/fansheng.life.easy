@@ -1,5 +1,5 @@
 ---
-title: 代码随想录算法训练营第三十天| 非递减子序列、全排列II
+title: 代码随想录算法训练营第二十九天| 非递减子序列、全排列II
 date: 2023-12-27 19:53:34
 tags:
   - Algorithm
@@ -9,7 +9,7 @@ categories:
 thumbnail: /fansheng.life.easy/images/default_cover_03.png
 ---
 
-# 代码随想录算法训练营第三十天
+# 代码随想录算法训练营第二十九天
 
 ## 非递减子序列
 
