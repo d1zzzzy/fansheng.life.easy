@@ -1,5 +1,5 @@
 ---
-title: 代码随想录算法训练营第三十一天| 买卖股票的最佳时机II、跳跃游戏 、 跳跃游戏II
+title: 代码随想录算法训练营第三十二天| 买卖股票的最佳时机II、跳跃游戏 、 跳跃游戏II
 date: 2023-12-31 21:29:50
 tags:
   - Algorithm
@@ -9,7 +9,7 @@ categories:
 thumbnail: /fansheng.life.easy/images/default_cover_05.png
 ---
 
-# 代码随想录算法训练营第三十一天
+# 代码随想录算法训练营第三十二天
 
 ## 买卖股票的最佳时机II
 
