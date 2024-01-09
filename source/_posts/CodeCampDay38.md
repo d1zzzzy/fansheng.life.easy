@@ -2,6 +2,11 @@
 title: 代码随想录算法训练营第三十八天| 动态规划基本概念、斐波那契数、爬楼梯、使用最小花费爬楼梯
 date: 2024-01-05 18:08:58
 tags:
+  - Algorithm
+  - DynamicProgramming
+categories:
+  - [Tech, Algorithm]
+thumbnail: /fansheng.life.easy/images/default_cover_02.png
 ---
 
 # 代码随想录算法训练营第三十八天
