@@ -6,7 +6,7 @@ tags:
   - DynamicProgramming
 categories:
   - [Tech, Algorithm]
-thumbnail: /fansheng.life.easy/images/default_cover_04.png
+thumbnail: /fansheng.life.easy/images/default_cover_04.jpg
 ---
 
 # 代码随想录算法训练营第五十二天
@@ -16,7 +16,6 @@ thumbnail: /fansheng.life.easy/images/default_cover_04.png
 ### 题目描述
 
 > 给定一个无序的整数数组，找到其中最长上升子序列的长度。
-
 
 ### 题目分析
 "最长递增子序列"（Longest Increasing Subsequence，简称 LIS）问题要求在一个未排序的数组中找到最长递增子序列的长度。递增子序列不必连续，但顺序必须保持不变。
