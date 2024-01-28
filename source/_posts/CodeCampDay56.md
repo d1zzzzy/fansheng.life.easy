@@ -6,7 +6,7 @@ tags:
   - DynamicProgramming
 categories:
   - [Tech, Algorithm]
-thumbnail: /fansheng.life.easy/images/default_cover_01.png
+thumbnail: /fansheng.life.easy/images/default_cover_01.jpg
 ---
 
 # 代码随想录算法训练营第五十六天
